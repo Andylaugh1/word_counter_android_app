@@ -16,17 +16,17 @@ public class WordCounter {
 
     public Map<String, Integer> countWordInstances(String words) {
         String[] wordlist = words.split("\\s+");
-        Map<String, Integer> hm = new HashMap<String, Integer>();
+        Map<String, Integer> instances = new HashMap<String, Integer>();
 
         for (int i=0 ; i<wordlist.length ; i++) {
-            if (hm.containsKey(wordlist[i])) {
-                int cont = hm.get(wordlist[i]);
-                hm.put(wordlist[i], cont + 1);
+            if (instances.containsKey(wordlist[i])) {
+                int cont = instances.get(wordlist[i]);
+                instances.put(wordlist[i], cont + 1);
             } else {
-                hm.put(wordlist[i], 1);
+                instances.put(wordlist[i], 1);
             }
         }
-        return hm;
+        return instances;
     }
 
 
