@@ -3,4 +3,5 @@
     <string name="enter_text">Enter Text Here</string>
     <string name="count_button">Press To Count</string>
     <string name="answer_text">Answer Box</string>
+    <string name="instance_button">Press to instance Count</string>
 </resources>

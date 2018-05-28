@@ -7,11 +7,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Map;
+
 public class WordCounterActivity extends AppCompatActivity {
 
     EditText enterTextBox;
     TextView answerText;
-    Button countButton;
+    Button countButton, instanceButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,7 @@ public class WordCounterActivity extends AppCompatActivity {
         enterTextBox = findViewById(R.id.enter_text);
         countButton = findViewById(R.id.count_button);
         answerText = findViewById(R.id.answer_box);
+        instanceButton = findViewById(R.id.instance_button);
     }
 
     public void onCountButtonClicked(View button){
@@ -30,5 +33,14 @@ public class WordCounterActivity extends AppCompatActivity {
         String answer = wordCounter.splitWords(sentence);
 
         answerText.setText(answer);
+    }
+
+    public void onCountInstanceButtonClicked(View button){
+        String sentence = enterTextBox.getText().toString();
+
+        WordCounter wordCounter = new WordCounter();
+        Map<String, Integer> answer = wordCounter.countWordInstances(sentence);
+
+        answerText.setText(answer.toString());
     }
 }
